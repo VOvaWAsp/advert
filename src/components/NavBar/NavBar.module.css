@@ -1,0 +1,22 @@
+.nav {
+    position: absolute;
+    right: 200px;
+    top: 30px;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover,
+.link:focus {
+    color: #ff5c00;
+    border-bottom: 1px solid #ff5c00;
+    padding-bottom: 4px;
+}
