@@ -1,0 +1,35 @@
+.item {
+    list-style-type: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(16, 24, 40, 0.2);
+border-radius: 20px;
+padding: 24px;
+width: 888px;
+border: 1px solid rgba(16, 24, 40, 0.2);
+border-radius: 20px;
+padding: 24px;
+width: 888px;
+height: 358px;
+}
+
+.blockInfoPrice {
+    display: flex;
+    flex-direction: row;
+}
+
+.img {
+    border-radius: 10px;
+width: 290px;
+height: 310px;
+}
+
+.title {
+font-weight: 600;
+font-size: 24px;
+line-height: 125%;
+color: var(--main);
+}

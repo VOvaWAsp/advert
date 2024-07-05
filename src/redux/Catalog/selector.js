@@ -1,1 +1,1 @@
-export const selectCatalog = state = state.catalog.items;
+// export const selectCatalog = state = state;

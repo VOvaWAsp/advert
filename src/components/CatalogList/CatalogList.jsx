@@ -1,8 +1,13 @@
-import { selectCatalog } from "../../redux/Catalog/selector";
+import Catalog from "../Catalog/Catalog";
 
 function CatalogList() {
-    // console.log(selectCatalog)
-    return <h2>Hello</h2>
+    return (
+    <div>
+        <ul>
+            <Catalog />
+        </ul>
+    </div>
+    );
 }
 
 export default CatalogList;
