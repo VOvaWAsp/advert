@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import css from "./Catalog.module.css"
 
-function Catalog({filteredCatalogs}) {
+function Catalog({filteredCatalogs, isOpen}) {
     // const catalogs = useSelector(state => state.catalog.items);
 
     const truncateText = (text, maxLength) => {
@@ -52,7 +52,7 @@ function Catalog({filteredCatalogs}) {
                         <p className={css.text}>{item.details.airConditioner > 0 ? "airConditioner" : ''}</p>
                     </div>
                     </div>
-                    <button type="button" className={css.btn}>Show more</button>
+                    <button onClick={() => isOpen(item)} type="button" className={css.btn}>Show more</button>
                     </div>
                 </div>
             </li>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Catalog from '../Catalog/Catalog';
 import Filter from '../Filter/Filter';
 import { useSelector } from 'react-redux';
+import CatalogModal from '../CatalogModal/CatalogModal';
 
 function CatalogList() {
     const [filterLocation, setFilterLocation] = useState('');
@@ -13,6 +14,7 @@ function CatalogList() {
         shower: false
     });
     const [vehicleType, setVehicleType] = useState('');
+    const [selectedItem, setSelectedItem] = useState(null);
 
     const catalogs = useSelector((state) => state.catalog.items);
 
@@ -31,8 +33,6 @@ function CatalogList() {
         setVehicleType(value);
     };
 
-    console.log(vehicleType)
-
     const filteredCatalogs = catalogs.filter((catalog) => {
         const location = catalog.location.toLowerCase().includes(filterLocation.toLowerCase());
         const equipment =
@@ -41,10 +41,18 @@ function CatalogList() {
             (!filterCheckBox.kitchen || catalog.details.kitchen > 0) &&
             (!filterCheckBox.TV || catalog.details.TV > 0) &&
             (!filterCheckBox.shower || catalog.details.shower > 0);
-            const type = vehicleType === '' || catalog.form === vehicleType;
+        const type = vehicleType === '' || catalog.form === vehicleType;
 
         return location && equipment && type;
     });
+
+    const handleOpenModal = (item) => {
+        setSelectedItem(item); 
+    };
+
+    const handleCloseModal = () => {
+        setSelectedItem(null); 
+    };
 
     return (
         <div>
@@ -54,8 +62,11 @@ function CatalogList() {
                 onFilterRadioChanges={handleFilterRadioChange}
             />
             <ul>
-                <Catalog filteredCatalogs={filteredCatalogs} />
+                <Catalog filteredCatalogs={filteredCatalogs} isOpen={handleOpenModal} />
             </ul>
+            {selectedItem && (
+                <CatalogModal item={selectedItem} closeModal={handleCloseModal} isOpen={selectedItem !== null} />
+            )}
         </div>
     );
 }
