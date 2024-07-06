@@ -13,7 +13,6 @@ border: 1px solid rgba(16, 24, 40, 0.2);
 border-radius: 20px;
 padding: 24px;
 width: 888px;
-height: 358px;
 }
 
 .blockInfoPrice {
@@ -27,9 +26,89 @@ width: 290px;
 height: 310px;
 }
 
+.blockInfo {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .title {
 font-weight: 600;
 font-size: 24px;
 line-height: 125%;
 color: var(--main);
+margin-right: 248px;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+    color: var(--main);
+    }
+
+.RataAndLocal {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+}
+
+.rate {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+color: var(--main);
+}
+
+.location {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--main);
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.service {
+    display: inline-block;
+    border-radius: 100px;
+padding: 12px 18px;
+background: #F2F4F7;
+mix-blend-mode: multiply;
+}
+
+.text {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 125%;
+text-align: center;
+color: var(--main);
+margin: 0;
+padding: 0;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 200px;
+padding: 16px 40px;
+width: 166px;
+background: #E44848;
+border: transparent;
+
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.01em;
+color: #fff;
 }

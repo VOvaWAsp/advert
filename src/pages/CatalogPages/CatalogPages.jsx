@@ -1,4 +1,5 @@
 import CatalogList from "../../components/CatalogList/CatalogList";
+import Filter from "../../components/Filter/Filter";
 import css from "./CatalogPages.module.css"
 
 function CatalogPages() {
