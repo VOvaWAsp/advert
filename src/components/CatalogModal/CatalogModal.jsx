@@ -2,12 +2,20 @@ import ReactModal from 'react-modal';
 import css from './CatalogModal.module.css';
 import Features from '../Features/Features';
 import { useState } from 'react';
+import Reviews from '../Reviews/Reviews';
 
 function CatalogModal({ item, closeModal, isOpen }) {
     const [openFeatures, setOpenFeatures] = useState(false);
+    const [openReviews, setOpenReviews] = useState(false)
 
     const handleOpen = () => {
-        setOpenFeatures(!openFeatures)
+        setOpenFeatures((prevOpenFeatures) => !prevOpenFeatures)
+        setOpenReviews(false)
+    }
+
+    const handleReviewsOpen = () => {
+        setOpenReviews((prevOpenReviews) => !prevOpenReviews)
+        setOpenFeatures(false)
     }
 
     const customStyles = {
@@ -18,6 +26,13 @@ function CatalogModal({ item, closeModal, isOpen }) {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
+            width: '982px',
+            borderRadius: '20px',
+            padding: '40px',
+            overflowY: 'auto',
+        },
+        overlay: {
+            backgroundColor: 'rgba(17, 18, 19, 0.4)',
         },
     };
 
@@ -25,7 +40,7 @@ function CatalogModal({ item, closeModal, isOpen }) {
 
     console.log(item)
     return (
-        <div>
+        <div className={css.reactModal}>
             <ReactModal
                 isOpen={isOpen}
                 contentLabel="onRequestClose Example"
@@ -34,27 +49,30 @@ function CatalogModal({ item, closeModal, isOpen }) {
                 style={customStyles}
             >
                 <div className={css.container}>
-                    <div>
-                    <h2>{item.name}</h2>
+                    <div className={css.navBar}>
+                    <h2 className={css.title}>{item.name}</h2>
                     <button type="button" className={css.button} onClick={closeModal}>
                         Close Modal
                     </button>
                     </div>
-                    <div>
-                        <h3>{item.rating}</h3>
-                        <h3>{item.location}</h3>
+                    <div className={css.rateAndLocal}>
+                        <p className={css.rating}>{item.rating}({item.reviews.length}Reviews)</p>
+                        <p className={css.location}>{item.location}</p>
                     </div>
-                    <p>€{item.price}</p>
-                    <div>
+                    <h3 className={css.title}>€{item.price}</h3>
+                    <div className={css.blockImages}>
                         {item.gallery.map(img => {
-                            return <img width='200px' src={img} />
+                            return <img className={css.img} src={img} />
                         })}
                     </div>
-                    <p>{item.description}</p>
-                    <div>
-                        <button onClick={handleOpen} type='button'>Features</button>
+                    <p className={css.text}>{item.description}</p>
+                    <div className={css.btnBlock}>
+                        <button className={css.btn} onClick={handleOpen} type='button'>Features</button>
+                        <button className={css.btn} onClick={handleReviewsOpen} type='button'>Reviews</button>
                     </div>
+                    <hr />
                     <Features open={openFeatures} item={item} />
+                    <Reviews openReviews={openReviews} item={item} />
                 </div>
             </ReactModal>
         </div>

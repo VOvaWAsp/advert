@@ -1,0 +1,86 @@
+.reactModal {
+        background: rgba(17, 18, 19, 0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 24px;
+line-height: 125%;
+color: var(--main);
+}
+
+.rateAndLocal {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    margin-bottom: 16px;
+}
+
+.rating {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+color: var(--main);
+}
+
+.location {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--main);
+}
+
+.blockImages {
+    display: flex;
+    flex-direction: row;
+    gap: 16px
+    ;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.img {
+    border-radius: 10px;
+width: 290px;
+height: 310px;
+}
+
+.text {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--text);
+}
+
+.btnBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.btn {
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 20px;
+line-height: 120%;
+color: var(--main);
+background-color: transparent;
+border: transparent;
+}

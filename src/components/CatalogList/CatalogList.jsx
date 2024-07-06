@@ -3,6 +3,7 @@ import Catalog from '../Catalog/Catalog';
 import Filter from '../Filter/Filter';
 import { useSelector } from 'react-redux';
 import CatalogModal from '../CatalogModal/CatalogModal';
+import css from "./CatalogList.module.css"
 
 function CatalogList() {
     const [filterLocation, setFilterLocation] = useState('');
@@ -55,13 +56,13 @@ function CatalogList() {
     };
 
     return (
-        <div>
+        <div className={css.container}>
             <Filter
                 onFilterCheckBoxChanges={handleFilterCheckBoxChange}
                 onFilterLocationChanges={handleFilterLocationChange}
                 onFilterRadioChanges={handleFilterRadioChange}
             />
-            <ul>
+            <ul className={css.blockCards}>
                 <Catalog filteredCatalogs={filteredCatalogs} isOpen={handleOpenModal} />
             </ul>
             {selectedItem && (

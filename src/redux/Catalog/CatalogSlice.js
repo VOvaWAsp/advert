@@ -19,8 +19,8 @@ const catalogSlice = createSlice({
             state.items = action.payload;
         })
         .addCase(fetchCatalog.rejected, (state, action) => {
-            state.isLoading = false
-            state.error = action.payload
+            state.isLoading = false;
+            state.error = action.payload;
         })
     }
 });

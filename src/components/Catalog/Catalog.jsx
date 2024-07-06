@@ -1,8 +1,13 @@
 import { useSelector } from "react-redux";
 import css from "./Catalog.module.css"
+import { useState } from "react";
 
 function Catalog({filteredCatalogs, isOpen}) {
-    // const catalogs = useSelector(state => state.catalog.items);
+    const [visible, setVisible] = useState(4);
+
+    const loadMore = () => {
+        setVisible((prevCount) => prevCount + 4)
+    }
 
     const truncateText = (text, maxLength) => {
         if (text.length > maxLength) {
@@ -12,9 +17,15 @@ function Catalog({filteredCatalogs, isOpen}) {
     }
 
     console.log(filteredCatalogs)
+
+    const visibleCatalogs = filteredCatalogs.slice(0, visible)
+
+    const handleFavorites = (item) => {
+        return window.localStorage.setItem('saved', JSON.stringify({...item}))
+    }
     return (
     <>
-    {filteredCatalogs.map(item => {
+    {visibleCatalogs.map(item => {
                 return(
                 <li className={css.item} key={item._id}>
                 <div className={css.container}>
@@ -24,7 +35,7 @@ function Catalog({filteredCatalogs, isOpen}) {
                        <div className={css.blockInfoPrice}>
                     <h2 className={css.title}>{item.name}</h2>
                     <h3 className={css.price}>€{item.price}</h3>
-                    <button></button>
+                    <button onClick={() => handleFavorites({...item})}>Favorite</button>
                     </div>
                     <div className={css.RataAndLocal}>
                     <h3 className={css.rate}>{item.rating}({item.reviews.length}Reviews)</h3>
@@ -57,6 +68,9 @@ function Catalog({filteredCatalogs, isOpen}) {
                 </div>
             </li>
             )})}
+            {visibleCatalogs.length < filteredCatalogs.length && (
+                <button className={css.btnLoadmore} onClick={loadMore} type="button">Load more</button>
+            )}
     </>
     )
 }

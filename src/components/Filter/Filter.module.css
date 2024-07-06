@@ -1,0 +1,94 @@
+.blockLocation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 38px;
+}
+
+.text {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: rgba(16, 24, 40, 0.6);
+}
+
+.input {
+    border-radius: 10px;
+padding: 18px 218px 18px 18px;
+background-color: #F7F7F7;
+border: transparent;
+}
+
+.blockFilter {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title {
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 20px;
+line-height: 120%;
+color: var(--main);
+margin-bottom: 24px;
+}
+
+.equipment {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 8px;
+    margin-bottom: 36px;
+}
+
+.checkboxLabel {
+    border: 1px solid #101828;
+border-radius: 10px;
+padding: 15px 20px;
+mix-blend-mode: multiply;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 125%;
+text-align: center;
+color: var(--main);
+}
+
+.blockRadio {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 64px;
+}
+
+.radioLabel {
+    border: 1px solid rgba(16, 24, 40, 0.2);
+border-radius: 10px;
+padding: 17px 30px;
+mix-blend-mode: multiply;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 125%;
+text-align: center;
+color: var(--main);
+}
+
+.btn {
+    border-radius: 200px;
+padding: 16px 60px;
+background: #E44848;
+border: transparent;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.01em;
+color: #fff;
+}

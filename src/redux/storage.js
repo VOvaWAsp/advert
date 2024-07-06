@@ -10,22 +10,20 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { CatalogReducer } from './Catalog/CatalogSlice';
 import storage from 'redux-persist/lib/storage';
-
+import { CatalogReducer } from './Catalog/CatalogSlice';
 
 const persistConfig = {
-    key: 'root',
+    key: 'catalog',
     storage,
-  };
-  
-  const persistedReducer = persistReducer(persistConfig, CatalogReducer);
+};
+
+const persistedReducer = persistReducer(persistConfig, CatalogReducer);
 
 export const store = configureStore({
   reducer: {
     catalog: persistedReducer,
   },
-
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {

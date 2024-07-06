@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Filter.module.css'; 
+import css from './Filter.module.css'; 
 
 function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadioChanges }) {
     const [filters, setFilters] = useState({
@@ -35,63 +35,68 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
     };
 
     return (
-        <>
-            <input
-                className={styles.filterInput}
+        <div>
+           <div className={css.blockLocation}>
+            <p className={css.text}>Location</p>
+           <input
+                className={css.input}
                 onChange={filterLocation}
                 type="text"
                 name="location"
             />
-            <form className={styles.filterForm} onSubmit={handleSubmit}>
-                <div className={styles.filters}>
-                    <h3 className={styles.filterTitle}>Filters</h3>
-                    <div className={styles.filterSection}>
-                        <h2>Vehicle equipment</h2>
-                        <div className={styles.checkboxGroup}>
-                            <label className={styles.checkboxLabel}>
-                                Air Conditioner
+           </div>
+            <form className={css.filterForm} onSubmit={handleSubmit}>
+                <div className={css.filters}>
+                    <p className={css.text}>Filters</p>
+                    <div className={css.blockFilter}>
+                        <div>
+                        <h2 className={css.title}>Vehicle equipment</h2>
+                        <hr />
+                        <div className={css.equipment}>
+                            <label className={css.checkboxLabel}>
+                                AC
                                 <input
-                                    className={styles.checkboxInput}
+                                    className={css.checkboxInput}
                                     onChange={handleCheckBoxChange}
                                     name="airConditioner"
                                     type="checkbox"
                                     checked={filters.airConditioner}
                                 />
                             </label>
-                            <label className={styles.checkboxLabel}>
+                            <label className={css.checkboxLabel}>
                                 Automatic
                                 <input
-                                    className={styles.checkboxInput}
+                                    className={css.checkboxInput}
                                     onChange={handleCheckBoxChange}
                                     name="automatic"
                                     type="checkbox"
                                     checked={filters.automatic}
                                 />
                             </label>
-                            <label className={styles.checkboxLabel}>
+                            <label className={css.checkboxLabel}>
                                 Kitchen
                                 <input
-                                    className={styles.checkboxInput}
+                                    className={css.checkboxInput}
                                     onChange={handleCheckBoxChange}
                                     name="kitchen"
                                     type="checkbox"
                                     checked={filters.kitchen}
                                 />
                             </label>
-                            <label className={styles.checkboxLabel}>
+                            <label className={css.checkboxLabel}>
                                 TV
                                 <input
-                                    className={styles.checkboxInput}
+                                    className={css.checkboxInput}
                                     onChange={handleCheckBoxChange}
                                     name="TV"
                                     type="checkbox"
                                     checked={filters.TV}
                                 />
                             </label>
-                            <label className={styles.checkboxLabel}>
+                            <label className={css.checkboxLabel}>
                                 Shower/WC
                                 <input
-                                    className={styles.checkboxInput}
+                                    className={css.checkboxInput}
                                     onChange={handleCheckBoxChange}
                                     name="shower"
                                     type="checkbox"
@@ -99,34 +104,35 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                 />
                             </label>
                         </div>
+                        </div>
                     </div>
-                    <div className={styles.filterSection}>
-                        <h2>Vehicle type</h2>
-                        <div className={styles.radioGroup}>
-                            <label className={styles.radioLabel}>
+                    <div>
+                        <h2 className={css.title}>Vehicle type</h2>
+                        <div className={css.blockRadio}>
+                            <label className={css.radioLabel}>
                             Van
                                 <input
-                                    className={styles.radioInput}
+                                    className={css.radioInput}
                                     onChange={handleRadioChange}
                                     value='panelTruck'
                                     name="vehicleType"
                                     type="radio"
                                 />
                             </label>
-                            <label className={styles.radioLabel}>
+                            <label className={css.radioLabel}>
                             Fully Integrated
                                 <input
-                                    className={styles.radioInput}
+                                    className={css.radioInput}
                                     onChange={handleRadioChange}
                                     value='fullyIntegrated'
                                     name="vehicleType"
                                     type="radio"
                                 />
                             </label>
-                            <label className={styles.radioLabel}>
+                            <label className={css.radioLabel}>
                             Alcove
                                 <input
-                                    className={styles.radioInput}
+                                    className={css.radioInput}
                                     onChange={handleRadioChange}
                                     value='alcove'
                                     name="vehicleType"
@@ -135,10 +141,10 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                             </label>
                         </div>
                     </div>
-                    <button type='submit' className={styles.filterButton}>Apply Filters</button>
+                    <button type='submit' className={css.btn}>Search</button>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 
