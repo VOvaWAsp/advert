@@ -3,9 +3,18 @@ import HomePages from "../pages/HomePages/HomePages"
 import NavBar from "./NavBar/NavBar"
 import CatalogPages from "../pages/CatalogPages/CatalogPages"
 import FavoritePages from "../pages/FavoritePages/FavoritePages"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchCatalog } from "../redux/Catalog/operations"
+import { useEffect } from "react"
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCatalog());
+}, [dispatch]);
+
   return (
     <>
     <NavBar />

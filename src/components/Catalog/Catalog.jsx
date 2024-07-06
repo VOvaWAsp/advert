@@ -21,8 +21,16 @@ function Catalog({filteredCatalogs, isOpen}) {
     const visibleCatalogs = filteredCatalogs.slice(0, visible)
 
     const handleFavorites = (item) => {
-        return window.localStorage.setItem('saved', JSON.stringify({...item}))
+        const savedItems = JSON.parse(window.localStorage.getItem('saved')) || [];
+    
+        const itemExists = savedItems.some(savedItem => savedItem._id === item._id);
+    
+        if (!itemExists) {
+            savedItems.push(item);
+            window.localStorage.setItem('saved', JSON.stringify(savedItems));
+        }
     }
+    
     return (
     <>
     {visibleCatalogs.map(item => {
