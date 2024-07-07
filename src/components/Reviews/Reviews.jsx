@@ -1,3 +1,4 @@
+import RentForm from "../RentForm/RentForm"
 import css from "./Reviews.module.css"
 
 function Reviews({openReviews, item}) {
@@ -8,7 +9,8 @@ function Reviews({openReviews, item}) {
     return (
         <>
         {openReviews && (
-            <div>
+            <div className={css.container}>
+                <div className={css.blockReviewers}>
                 {item.reviews.map(review => {
                         return ( <div key={review.reviewer_name} className={css.blockReviews}>
                         <div className={css.blockInfoUser}>
@@ -21,7 +23,10 @@ function Reviews({openReviews, item}) {
                          <p className={css.text}>{review.comment}</p>
                          </div>)
                     })}
-                <div></div>
+                    </div>
+                <div>
+                    <RentForm />
+                </div>
             </div>
         )}
         </>

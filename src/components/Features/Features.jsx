@@ -1,10 +1,11 @@
+import RentForm from "../RentForm/RentForm";
 import css from "./Features.module.css"
 
 function Features({open, item}) {
     return (
         <>
         {open && (
-           <div>
+           <div className={css.container}>
              <div className={css.blockBenefits}>
                 <div className={css.benefits}>
                     <div className={css.service}>
@@ -68,7 +69,7 @@ function Features({open, item}) {
                 </div>
             </div>
             <div>
-
+                <RentForm />
             </div>
            </div>
         )}
