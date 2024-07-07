@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import css from './Filter.module.css'; 
+import sprite from "../../sprite/sprite.svg";
 
 function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadioChanges }) {
     const [filters, setFilters] = useState({
@@ -19,13 +20,13 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
         const { name, checked } = event.target;
         const newFilters = { ...filters, [name]: checked };
         setFilters(newFilters);
-        onFilterCheckBoxChanges(newFilters); // Call the prop function to pass the updated filters
+        onFilterCheckBoxChanges(newFilters);
     };
 
     const handleRadioChange = (event) => {
         const { value } = event.target;
         setVehicleType(value);
-        onFilterRadioChanges(value); // Call the prop function to pass the updated vehicle type
+        onFilterRadioChanges(value); 
     };
 
     const handleSubmit = (event) => {
@@ -43,7 +44,11 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                     onChange={filterLocation}
                     type="text"
                     name="location"
+                    placeholder="City"
                 />
+                <span className=''><svg width="24" height="25">
+                    <use href={`${sprite}#icon-map-pin`}></use>
+                </svg></span>
             </div>
             <form className={css.filterForm} onSubmit={handleSubmit}>
                 <div className={css.filters}>
@@ -53,8 +58,13 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                             <h2 className={css.title}>Vehicle equipment</h2>
                             <hr />
                             <div className={css.equipment}>
-                                <label className={css.checkboxLabel}>
-                                    AC
+                                <label className={`${css.checkboxLabel} ${filters.airConditioner ? css.checkboxInputs : ''}`}>
+                                <span>
+                                <svg width="24" height="25">
+                                    <use href={`${sprite}#icon-Vector`}></use>
+                                </svg>
+                            </span>
+                                    <p>AC</p>
                                     <input
                                         className={css.checkboxInput}
                                         onChange={handleCheckBoxChange}
@@ -63,8 +73,13 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         checked={filters.airConditioner}
                                     />
                                 </label>
-                                <label className={css.checkboxLabel}>
-                                    Automatic
+                                <label className={`${css.checkboxLabel} ${filters.automatic ? css.checkboxInputs : ''}`}>
+                                    <span>
+                                <svg width="24" height="25">
+                                    <use href={`${sprite}#icon-Container`}></use>
+                                </svg>
+                            </span>
+                                    <p>Automatic</p>
                                     <input
                                         className={css.checkboxInput}
                                         onChange={handleCheckBoxChange}
@@ -73,8 +88,13 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         checked={filters.automatic}
                                     />
                                 </label>
-                                <label className={css.checkboxLabel}>
-                                    Kitchen
+                                <label className={`${css.checkboxLabel} ${filters.kitchen ? css.checkboxInputs : ''}`}>
+                                <span>
+                                <svg width="24" height="25">
+                                    <use href={`${sprite}#icon-Horizontal-container`}></use>
+                                </svg>
+                            </span>
+                                    <p>Kitchen</p>
                                     <input
                                         className={css.checkboxInput}
                                         onChange={handleCheckBoxChange}
@@ -83,8 +103,13 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         checked={filters.kitchen}
                                     />
                                 </label>
-                                <label className={css.checkboxLabel}>
-                                    TV
+                                <label className={`${css.checkboxLabel} ${filters.TV ? css.checkboxInputs : ''}`}>
+                                <span>
+                                <svg width="24" height="25">
+                                    <use href={`${sprite}#icon-Vertical-container-1`}></use>
+                                </svg>
+                            </span>
+                                    <p>TV</p>
                                     <input
                                         className={css.checkboxInput}
                                         onChange={handleCheckBoxChange}
@@ -93,8 +118,13 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         checked={filters.TV}
                                     />
                                 </label>
-                                <label className={css.checkboxLabel}>
-                                    Shower/WC
+                                <label className={`${css.checkboxLabel} ${filters.shower ? css.checkboxInputs : ''}`}>
+                                <span>
+                                <svg width="24" height="25">
+                                    <use href={`${sprite}#icon-Rating`}></use>
+                                </svg>
+                            </span>
+                                    <p>Shower/WC</p>
                                     <input
                                         className={css.checkboxInput}
                                         onChange={handleCheckBoxChange}
@@ -109,7 +139,12 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                     <div>
                         <h2 className={css.title}>Vehicle type</h2>
                         <div className={css.blockRadio}>
-                            <label className={css.radioLabel}>
+                            <label className={`${css.radioLabel} ${vehicleType === 'panelTruck' ? css.checkboxInputs : ''}`}>
+                            <span>
+                                <svg width="40" height="29">
+                                    <use href={`${sprite}#icon-Button-2`}></use>
+                                </svg>
+                            </span>
                                 Van
                                 <input
                                     className={css.radioInput}
@@ -117,19 +152,32 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                     value='panelTruck'
                                     name="vehicleType"
                                     type="radio"
+                                    checked={vehicleType === 'panelTruck'}
                                 />
                             </label>
-                            <label className={css.radioLabel}>
-                                Fully Integrated
+                            <label className={`${css.radioLabel} ${vehicleType === 'fullyIntegrated' ? css.checkboxInputs : ''}`}>
+                            <span>
+                                <svg width="40" height="29">
+                                    <use href={`${sprite}#icon-Button-1`}></use>
+                                </svg>
+                            </span>
+                               <p> Fully 
+                                Integrated</p>
                                 <input
                                     className={css.radioInput}
                                     onChange={handleRadioChange}
                                     value='fullyIntegrated'
                                     name="vehicleType"
                                     type="radio"
+                                    checked={vehicleType === 'fullyIntegrated'}
                                 />
                             </label>
-                            <label className={css.radioLabel}>
+                            <label className={`${css.radioLabel} ${vehicleType === 'alcove' ? css.checkboxInputs : ''}`}>
+                            <span>
+                                <svg width="40" height="29">
+                                    <use href={`${sprite}#icon-camper`}></use>
+                                </svg>
+                            </span>
                                 Alcove
                                 <input
                                     className={css.radioInput}
@@ -137,6 +185,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                     value='alcove'
                                     name="vehicleType"
                                     type="radio"
+                                    checked={vehicleType === 'alcove'}
                                 />
                             </label>
                         </div>

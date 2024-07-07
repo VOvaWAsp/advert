@@ -1,5 +1,6 @@
 import { useState } from "react";
 import css from "./Catalog.module.css";
+import sprite from "../../sprite/sprite.svg"
 
 function Catalog({ filteredCatalogs, isOpen }) {
     const [visible, setVisible] = useState(4);
