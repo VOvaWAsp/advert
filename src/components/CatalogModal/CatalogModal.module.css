@@ -1,10 +1,10 @@
 .reactModal {
-        background: rgba(17, 18, 19, 0.4);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+    background: rgba(17, 18, 19, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .navBar {
@@ -14,11 +14,11 @@
 }
 
 .title {
-    font-family: var(--font-family);
-font-weight: 600;
-font-size: 24px;
-line-height: 125%;
-color: var(--main);
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #333;
 }
 
 .rateAndLocal {
@@ -34,48 +34,47 @@ color: var(--main);
 }
 
 .rating {
-    font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-text-decoration: underline;
-text-decoration-skip-ink: none;
-color: var(--main);
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #333;
 }
 
 .rateSpan {
     margin-right: 4px;
-    }
+}
 
 .location {
-    font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-color: var(--main);
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
 }
 
 .blockImages {
     display: flex;
     flex-direction: row;
-    gap: 16px
-    ;
+    gap: 16px;
     margin-top: 24px;
     margin-bottom: 24px;
 }
 
 .img {
     border-radius: 10px;
-width: 290px;
-height: 310px;
+    width: 290px;
+    height: 310px;
 }
 
 .text {
-    font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-color: var(--text);
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666;
 }
 
 .btnBlock {
@@ -86,25 +85,25 @@ color: var(--text);
 
 .btnF {
     position: relative;
-    font-family: var(--font-family);
-font-weight: 600;
-font-size: 20px;
-line-height: 120%;
-color: var(--main);
-background-color: transparent;
-border: transparent;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333;
+    background-color: transparent;
+    border: transparent;
 }
 
 .btnR {
     position: relative;
-    font-family: var(--font-family);
-font-weight: 600;
-font-size: 20px;
-line-height: 120%;
-color: var(--main);
-background-color: transparent;
-border: transparent;
-margin-left: 120px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333;
+    background-color: transparent;
+    border: transparent;
+    margin-left: 120px;
 }
 
 .btnSelectedF {

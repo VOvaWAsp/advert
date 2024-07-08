@@ -1,4 +1,5 @@
 .blockLocation {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -6,11 +7,11 @@
 }
 
 .text {
-    font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 150%;
-color: rgba(16, 24, 40, 0.6);
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(16, 24, 40, 0.6);
 }
 
 .checkboxInput,
@@ -23,9 +24,9 @@ color: rgba(16, 24, 40, 0.6);
     display: flex;
     align-items: center;
     border-radius: 10px;
-padding: 18px 218px 18px 18px;
-background-color: #F7F7F7;
-border: transparent;
+    padding: 18px 218px 18px 18px;
+    background-color: #F7F7F7;
+    border: transparent;
 }
 
 .input::placeholder {
@@ -34,11 +35,10 @@ border: transparent;
 
 .inputIcon {
     position: absolute;
-    left: 20px;
-    top: 17%;
+    left: 10px;
+    top: 60px;
     transform: translateY(-50%);
     pointer-events: none;
-
     stroke: #101828;
 }
 
@@ -62,12 +62,12 @@ border: transparent;
 }
 
 .title {
-    font-family: var(--font-family);
-font-weight: 600;
-font-size: 20px;
-line-height: 120%;
-color: var(--main);
-margin-bottom: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333;
+    margin-bottom: 24px;
 }
 
 .equipment {
@@ -82,15 +82,15 @@ margin-bottom: 24px;
 
 .checkboxLabel {
     border: 1px solid rgba(16, 24, 40, 0.2);
-border-radius: 10px;
-padding: 15px 20px;
-mix-blend-mode: multiply;
-font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 125%;
-text-align: center;
-color: var(--main);
+    border-radius: 10px;
+    padding: 15px 20px;
+    mix-blend-mode: multiply;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #333;
 }
 
 .checkboxInputs {
@@ -107,28 +107,28 @@ color: var(--main);
 
 .radioLabel {
     border: 1px solid rgba(16, 24, 40, 0.2);
-border-radius: 10px;
-padding: 17px 30px;
-mix-blend-mode: multiply;
-font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 125%;
-text-align: center;
-color: var(--main);
+    border-radius: 10px;
+    padding: 17px 30px;
+    mix-blend-mode: multiply;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #333;
 }
 
 .btn {
     border-radius: 200px;
-padding: 16px 60px;
-background: #E44848;
-border: transparent;
-font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 150%;
-letter-spacing: -0.01em;
-color: #fff;
+    padding: 16px 60px;
+    background: #E44848;
+    border: transparent;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #fff;
 }
 
 .btn:hover,

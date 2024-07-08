@@ -23,13 +23,13 @@
     align-items: center;
     margin-right: 16px;
     border-radius: 60px;
-width: 60px;
-height: 60px;
-background: #F2F4F7;
-font-weight: 600;
-font-size: 24px;
-line-height: 125%;
-color: #E44848;
+    width: 60px;
+    height: 60px;
+    background: #F2F4F7;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+    color: #E44848;
 }
 
 .nameAndRate {
@@ -39,17 +39,17 @@ color: #E44848;
 }
 
 .title {
-    font-family: var(--font-family);
-font-weight: 600;
-font-size: 18px;
-line-height: 133%;
-color: var(--main);
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #333;
 }
 
 .text {
-    font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-color: var(--text);
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666;
 }
