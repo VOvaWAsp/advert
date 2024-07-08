@@ -58,9 +58,9 @@ function Catalog({ filteredCatalogs, isOpen }) {
                                         <h3 className={css.price}>€{item.price}</h3>
                                         <button className={css.buttonFavorite} onClick={() => handleFavorites({ ...item })}>
                                             {isItemFavorite ? <svg width="25" height="24">
-                                                <use fill="white" stroke="black" href={`${sprite}#icon-Property-1Default`}></use>
-                                            </svg> : <svg width="25" height="24">
                                                 <use href={`${sprite}#icon-Property-1pressed`}></use>
+                                            </svg> : <svg width="25" height="24">
+                                                <use fill="white" stroke="black" href={`${sprite}#icon-Property-1Default`}></use>
                                             </svg>}
                                         </button>
                                     </div>
