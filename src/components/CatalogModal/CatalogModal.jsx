@@ -30,6 +30,7 @@ function CatalogModal({ item, closeModal, isOpen }) {
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
             width: '982px',
+            height: '80vh',
             borderRadius: '20px',
             padding: '40px',
             overflowY: 'auto',

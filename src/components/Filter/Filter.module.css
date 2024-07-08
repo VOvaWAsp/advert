@@ -19,13 +19,40 @@ color: rgba(16, 24, 40, 0.6);
 }
 
 .input {
+    position: relative;
+    display: flex;
+    align-items: center;
     border-radius: 10px;
 padding: 18px 218px 18px 18px;
 background-color: #F7F7F7;
 border: transparent;
 }
 
+.input::placeholder {
+    padding-left: 20px;
+}
 
+.inputIcon {
+    position: absolute;
+    left: 20px;
+    top: 17%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    stroke: #101828;
+}
+
+.input:hover + .inputIcon,
+.input:focus + .inputIcon {
+    stroke: black;
+}
+
+.input:hover::placeholder {
+    color: #101828;
+}
+.input:focus::placeholder {
+    color: #101828;
+}
 
 .blockFilter {
     margin-top: 12px;

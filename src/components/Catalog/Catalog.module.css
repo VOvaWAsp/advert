@@ -143,7 +143,7 @@ margin-top: 50px;
 
 .btnLoadmore:hover,
 .btnLoadmore:focus {
-    border: 1px #D84343 !important;
+    border: 1px solid #D84343;
 }
 
 .span {

@@ -11,6 +11,14 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
         shower: false
     });
     const [vehicleType, setVehicleType] = useState('');
+    const [tempFilters, setTempFilters] = useState({
+        airConditioner: false,
+        automatic: false,
+        kitchen: false,
+        TV: false,
+        shower: false
+    });
+    const [tempVehicleType, setTempVehicleType] = useState('');
 
     const filterLocation = (event) => {
         onFilterLocationChanges(event.target.value);
@@ -18,21 +26,20 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
 
     const handleCheckBoxChange = (event) => {
         const { name, checked } = event.target;
-        const newFilters = { ...filters, [name]: checked };
-        setFilters(newFilters);
-        onFilterCheckBoxChanges(newFilters);
+        setTempFilters({ ...tempFilters, [name]: checked });
     };
 
     const handleRadioChange = (event) => {
         const { value } = event.target;
-        setVehicleType(value);
-        onFilterRadioChanges(value); 
+        setTempVehicleType(value);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onFilterCheckBoxChanges(filters);
-        onFilterRadioChanges(vehicleType);
+        setFilters(tempFilters);
+        setVehicleType(tempVehicleType);
+        onFilterCheckBoxChanges(tempFilters);
+        onFilterRadioChanges(tempVehicleType);
     };
 
     return (
@@ -46,7 +53,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                     name="location"
                     placeholder="City"
                 />
-                <span className=''><svg width="24" height="25">
+                <span className={css.inputIcon}><svg width="24" height="25">
                     <use stroke='black' fill='white' href={`${sprite}#icon-map-pin`}></use>
                 </svg></span>
             </div>
@@ -58,7 +65,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                             <h2 className={css.title}>Vehicle equipment</h2>
                             <hr />
                             <div className={css.equipment}>
-                                <label className={`${css.checkboxLabel} ${filters.airConditioner ? css.checkboxInputs : ''}`}>
+                                <label className={`${css.checkboxLabel} ${tempFilters.airConditioner ? css.checkboxInputs : ''}`}>
                                 <span>
                                 <svg width="24" height="25">
                                     <use href={`${sprite}#icon-Vector`}></use>
@@ -70,10 +77,10 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         onChange={handleCheckBoxChange}
                                         name="airConditioner"
                                         type="checkbox"
-                                        checked={filters.airConditioner}
+                                        checked={tempFilters.airConditioner}
                                     />
                                 </label>
-                                <label className={`${css.checkboxLabel} ${filters.automatic ? css.checkboxInputs : ''}`}>
+                                <label className={`${css.checkboxLabel} ${tempFilters.automatic ? css.checkboxInputs : ''}`}>
                                     <span>
                                 <svg width="24" height="25">
                                     <use stroke='black' href={`${sprite}#icon-Container`}></use>
@@ -85,10 +92,10 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         onChange={handleCheckBoxChange}
                                         name="automatic"
                                         type="checkbox"
-                                        checked={filters.automatic}
+                                        checked={tempFilters.automatic}
                                     />
                                 </label>
-                                <label className={`${css.checkboxLabel} ${filters.kitchen ? css.checkboxInputs : ''}`}>
+                                <label className={`${css.checkboxLabel} ${tempFilters.kitchen ? css.checkboxInputs : ''}`}>
                                 <span>
                                 <svg width="24" height="25">
                                     <use stroke='black' href={`${sprite}#icon-Horizontal-container`}></use>
@@ -100,10 +107,10 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         onChange={handleCheckBoxChange}
                                         name="kitchen"
                                         type="checkbox"
-                                        checked={filters.kitchen}
+                                        checked={tempFilters.kitchen}
                                     />
                                 </label>
-                                <label className={`${css.checkboxLabel} ${filters.TV ? css.checkboxInputs : ''}`}>
+                                <label className={`${css.checkboxLabel} ${tempFilters.TV ? css.checkboxInputs : ''}`}>
                                 <span>
                                 <svg width="24" height="25">
                                     <use stroke='black' fill='white' href={`${sprite}#icon-Vertical-container-1`}></use>
@@ -115,10 +122,10 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         onChange={handleCheckBoxChange}
                                         name="TV"
                                         type="checkbox"
-                                        checked={filters.TV}
+                                        checked={tempFilters.TV}
                                     />
                                 </label>
-                                <label className={`${css.checkboxLabel} ${filters.shower ? css.checkboxInputs : ''}`}>
+                                <label className={`${css.checkboxLabel} ${tempFilters.shower ? css.checkboxInputs : ''}`}>
                                 <span>
                                 <svg width="24" height="25">
                                     <use stroke='black' href={`${sprite}#icon-Rating`}></use>
@@ -130,7 +137,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                         onChange={handleCheckBoxChange}
                                         name="shower"
                                         type="checkbox"
-                                        checked={filters.shower}
+                                        checked={tempFilters.shower}
                                     />
                                 </label>
                             </div>
@@ -139,7 +146,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                     <div>
                         <h2 className={css.title}>Vehicle type</h2>
                         <div className={css.blockRadio}>
-                            <label className={`${css.radioLabel} ${vehicleType === 'panelTruck' ? css.checkboxInputs : ''}`}>
+                            <label className={`${css.radioLabel} ${tempVehicleType === 'panelTruck' ? css.checkboxInputs : ''}`}>
                             <span>
                                 <svg width="40" height="29">
                                     <use href={`${sprite}#icon-Button-2`}></use>
@@ -152,10 +159,10 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                     value='panelTruck'
                                     name="vehicleType"
                                     type="radio"
-                                    checked={vehicleType === 'panelTruck'}
+                                    checked={tempVehicleType === 'panelTruck'}
                                 />
                             </label>
-                            <label className={`${css.radioLabel} ${vehicleType === 'fullyIntegrated' ? css.checkboxInputs : ''}`}>
+                            <label className={`${css.radioLabel} ${tempVehicleType === 'fullyIntegrated' ? css.checkboxInputs : ''}`}>
                             <span>
                                 <svg width="40" height="29">
                                     <use href={`${sprite}#icon-Button-1`}></use>
@@ -169,10 +176,10 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                     value='fullyIntegrated'
                                     name="vehicleType"
                                     type="radio"
-                                    checked={vehicleType === 'fullyIntegrated'}
+                                    checked={tempVehicleType === 'fullyIntegrated'}
                                 />
                             </label>
-                            <label className={`${css.radioLabel} ${vehicleType === 'alcove' ? css.checkboxInputs : ''}`}>
+                            <label className={`${css.radioLabel} ${tempVehicleType === 'alcove' ? css.checkboxInputs : ''}`}>
                             <span>
                                 <svg width="40" height="29">
                                     <use href={`${sprite}#icon-camper`}></use>
@@ -185,7 +192,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                     value='alcove'
                                     name="vehicleType"
                                     type="radio"
-                                    checked={vehicleType === 'alcove'}
+                                    checked={tempVehicleType === 'alcove'}
                                 />
                             </label>
                         </div>
