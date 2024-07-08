@@ -47,7 +47,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                     placeholder="City"
                 />
                 <span className=''><svg width="24" height="25">
-                    <use href={`${sprite}#icon-map-pin`}></use>
+                    <use stroke='black' fill='white' href={`${sprite}#icon-map-pin`}></use>
                 </svg></span>
             </div>
             <form className={css.filterForm} onSubmit={handleSubmit}>
@@ -76,7 +76,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                 <label className={`${css.checkboxLabel} ${filters.automatic ? css.checkboxInputs : ''}`}>
                                     <span>
                                 <svg width="24" height="25">
-                                    <use href={`${sprite}#icon-Container`}></use>
+                                    <use stroke='black' href={`${sprite}#icon-Container`}></use>
                                 </svg>
                             </span>
                                     <p>Automatic</p>
@@ -91,7 +91,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                 <label className={`${css.checkboxLabel} ${filters.kitchen ? css.checkboxInputs : ''}`}>
                                 <span>
                                 <svg width="24" height="25">
-                                    <use href={`${sprite}#icon-Horizontal-container`}></use>
+                                    <use stroke='black' href={`${sprite}#icon-Horizontal-container`}></use>
                                 </svg>
                             </span>
                                     <p>Kitchen</p>
@@ -106,7 +106,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                 <label className={`${css.checkboxLabel} ${filters.TV ? css.checkboxInputs : ''}`}>
                                 <span>
                                 <svg width="24" height="25">
-                                    <use href={`${sprite}#icon-Vertical-container-1`}></use>
+                                    <use stroke='black' fill='white' href={`${sprite}#icon-Vertical-container-1`}></use>
                                 </svg>
                             </span>
                                     <p>TV</p>
@@ -121,7 +121,7 @@ function Filter({ onFilterLocationChanges, onFilterCheckBoxChanges, onFilterRadi
                                 <label className={`${css.checkboxLabel} ${filters.shower ? css.checkboxInputs : ''}`}>
                                 <span>
                                 <svg width="24" height="25">
-                                    <use href={`${sprite}#icon-Rating`}></use>
+                                    <use stroke='black' href={`${sprite}#icon-Rating`}></use>
                                 </svg>
                             </span>
                                     <p>Shower/WC</p>

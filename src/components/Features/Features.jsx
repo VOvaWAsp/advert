@@ -1,5 +1,6 @@
 import RentForm from "../RentForm/RentForm";
 import css from "./Features.module.css"
+import sprite from "../../sprite/sprite.svg"
 
 function Features({open, item}) {
     return (
@@ -9,34 +10,74 @@ function Features({open, item}) {
              <div className={css.blockBenefits}>
                 <div className={css.benefits}>
                     <div className={css.service}>
-                        <p className={css.text}>{item.adults} adults</p>
+                        <p className={css.text}><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use href={`${sprite}#icon-Users`}></use>
+                            </svg>
+                            </span>{item.adults} adults</p>
                     </div>
                     <div className={css.service}>
-                        <p>{item.transmission}</p>
+                        <p><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use stroke="black" href={`${sprite}#icon-Container`}></use>
+                            </svg>
+                            </span>{item.transmission}</p>
                     </div>
                     <div className={css.service}>
-                        <p>{item.details.airConditioner > 0 ? "AC" : null}</p>
+                        <p><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use href={`${sprite}#icon-Vertical-container-2`}></use>
+                            </svg>
+                            </span>{item.details.airConditioner > 0 ? "AC" : null}</p>
                     </div>
                     <div className={css.service}>
-                        <p>{item.engine}</p>
+                        <p><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use href={`${sprite}#icon-Vertical-container`}></use>
+                            </svg>
+                            </span>{item.engine}</p>
                     </div>
                     <div className={css.service}>
-                        <p>{item.details.kitchen > 0 ? "kitchen" : null}</p>
+                        <p><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use stroke="black" href={`${sprite}#icon-Horizontal-container`}></use>
+                            </svg>
+                            </span>{item.details.kitchen > 0 ? "kitchen" : null}</p>
                     </div>
                     <div className={css.service}>
-                        <p>{item.details.beds} beds</p>
+                        <p><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use fill="white" stroke="black" href={`${sprite}#icon-Container-1`}></use>
+                            </svg>
+                            </span>{item.details.beds} beds</p>
                     </div>
                     <div className={css.service}>
-                        <p>{item.details.airConditioner} air conditioner</p>
+                        <p><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use fill="white" stroke="black" href={`${sprite}#icon-streamline_hotel-air-conditioner`}></use>
+                            </svg>
+                            </span>{item.details.airConditioner} air conditioner</p>
                     </div>
                     {item.details.CD > 0 ?  <div className={css.service}>
-                        <p className={css.text}>{item.details.CD > 0 ? 'CD' :  null}</p>
+                        <p className={css.text}><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use fill="white" stroke="black" href={`${sprite}#icon-icon-park-outline_cd`}></use>
+                            </svg>
+                            </span>{item.details.CD > 0 ? 'CD' :  null}</p>
                     </div> :  null}
                     <div className={css.service}>
-                        <p className={css.text}>{item.details.radio > 0 ? 'radio' :  null}</p>
+                        <p className={css.text}><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use fill="white" stroke="black" href={`${sprite}#icon-solar_radio-linear`}></use>
+                            </svg>
+                            </span>{item.details.radio > 0 ? 'radio' :  null}</p>
                     </div>
                     <div className={css.service}>
-                        <p className={css.text}>{item.details.hob} hob</p>
+                        <p className={css.text}><span className={css.span}>
+                            <svg width="20" height="20">
+                                <use fill="white" stroke="black" href={`${sprite}#icon-icon-park-outline_hand-painted-plate`}></use>
+                            </svg>
+                            </span>{item.details.hob} hob</p>
                     </div>
                 </div>
                 <div>

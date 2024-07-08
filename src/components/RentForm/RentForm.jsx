@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import css from "./RentForm.module.css";
 import "./calendar.css"
+import sprite from "../../sprite/sprite.svg"
 
 function RentForm() {
     const [startDate, setStartDate] = useState(new Date());
@@ -51,7 +52,9 @@ function RentForm() {
                                 {({ field, form }) => (
                                     <div>
                                         <button className={css.btnInput} type="button" onClick={toggleDatePicker}>
-                                            Вибрати дату
+                                            <svg className={css.svg} width="20" height="20">
+                                                <use stroke='black' fill='white' href={`${sprite}#icon-Button`}></use>
+                                            </svg>
                                         </button>
                                         {isDatePickerOpen && (
                                            <DatePicker

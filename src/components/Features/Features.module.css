@@ -61,3 +61,7 @@ line-height: 133%;
 text-align: center;
 color: var(--main);
 }
+
+.span {
+   margin-right: 4px;
+}

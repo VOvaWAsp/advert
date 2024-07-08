@@ -41,7 +41,8 @@ color: var(--text);
 .input {
     border-radius: 10px;
 padding: 18px 280px 18px 18px;
-background: var(--inputs);
+background-color: #F7F7F7;
+border: transparent;
 }
 
 .input::placeholder {
@@ -52,21 +53,39 @@ line-height: 125%;
 color: rgba(16, 24, 40, 0.6);
 }
 
+.input:hover::placeholder,
+.input:focus::placeholder {
+    color: #101828;
+}
+
+
 .btnInput {
     border-radius: 10px;
-    padding: 18px 335px 18px 18px;
-    background: var(--inputs);
+    padding: 18px 25px 18px 18px;
+    background-color: #F7F7F7;
+    border: transparent;
+    text-align: end;
+}
+
+.svg {
+    padding-left: 355px;
 }
 
 .comment {
     border-radius: 10px;
 padding: 18px 260px 76px 18px;
-background: var(--inputs);
+background-color: #F7F7F7;
+border: transparent;
 font-family: var(--font-family);
 font-weight: 400;
 font-size: 16px;
 line-height: 125%;
 color: rgba(16, 24, 40, 0.6);
+}
+
+.comment:hover::placeholder,
+.comment:focus::placeholder {
+    color: #101828;
 }
 
 .btn {
@@ -88,3 +107,4 @@ color: #fff;
 .btn:focus {
     background-color: #D84343;
 }
+

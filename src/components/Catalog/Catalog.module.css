@@ -64,6 +64,10 @@ text-decoration-skip-ink: none;
 color: var(--main);
 }
 
+.rateSpan {
+margin-right: 4px;
+}
+
 .location {
     font-family: var(--font-family);
 font-weight: 400;
@@ -141,3 +145,12 @@ margin-top: 50px;
 .btnLoadmore:focus {
     border: 1px #D84343 !important;
 }
+
+.span {
+    margin-right: 4px;
+ }
+
+ .buttonFavorite {
+    background-color: transparent;
+    border: transparent;
+ }

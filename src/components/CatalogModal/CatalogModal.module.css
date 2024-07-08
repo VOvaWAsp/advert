@@ -28,6 +28,11 @@ color: var(--main);
     margin-bottom: 16px;
 }
 
+.button {
+    background-color: transparent;
+    border: transparent;
+}
+
 .rating {
     font-family: var(--font-family);
 font-weight: 400;
@@ -37,6 +42,10 @@ text-decoration: underline;
 text-decoration-skip-ink: none;
 color: var(--main);
 }
+
+.rateSpan {
+    margin-right: 4px;
+    }
 
 .location {
     font-family: var(--font-family);
@@ -75,7 +84,8 @@ color: var(--text);
     gap: 40px;
 }
 
-.btn {
+.btnF {
+    position: relative;
     font-family: var(--font-family);
 font-weight: 600;
 font-size: 20px;
@@ -83,4 +93,31 @@ line-height: 120%;
 color: var(--main);
 background-color: transparent;
 border: transparent;
+}
+
+.btnR {
+    position: relative;
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 20px;
+line-height: 120%;
+color: var(--main);
+background-color: transparent;
+border: transparent;
+margin-left: 120px;
+}
+
+.btnSelectedF {
+    position: absolute;
+    padding-bottom: 7px;
+    border-bottom: 4px solid #E44848;
+    z-index: 999;
+}
+
+.btnSelectedR {
+    position: absolute;
+    padding-bottom: 7px;
+    border-bottom: 4px solid #E44848;
+    z-index: 999;
+    margin-left: 120px;
 }
